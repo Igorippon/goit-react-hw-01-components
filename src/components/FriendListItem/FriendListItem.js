@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
-import { Item, Span} from './FriendListItem.styled';
+import { Item, Span, Name} from './FriendListItem.styled';
 
-export const FriendListItem = ({avatar, name, isOnline}) => {
+export const FriendListItem = ({ avatar, name, isOnline }) => {
     return (
         <Item>
-            <Span isOnline={isOnline}></Span>
+            <Span $isOnline={isOnline}></Span>
             <img src={avatar} alt={name} width="48" />
-            <p >{name}</p>
+            <Name >{name}</Name>
         </Item>
     );
-}
+};
 
 FriendListItem.propTypes = {
     avatar: PropTypes.string.isRequired,
