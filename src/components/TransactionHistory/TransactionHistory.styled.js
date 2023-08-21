@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeaderCell = styled.th`
+export const TableHeader = styled.th`
   font-weight: 500;
   font-size: 24px;
   line-height: 1.11;
@@ -11,7 +11,7 @@ export const HeaderCell = styled.th`
   color: ${props => props.theme.colors.white};
 `;
 
-export const Cell = styled.td`
+export const TableData= styled.td`
     font-weight: 300;
     font-size: 24px;
     line-height: 1.11;
@@ -20,7 +20,7 @@ export const Cell = styled.td`
     border: 1px Solid hwb(240 86% 11%); 
 `;
 
-export const Line = styled.tr`
+export const TableRow = styled.tr`
   text-align:center;
   &:nth-child(even) {
   background-color: rgba(229, 236, 231, 0.741)

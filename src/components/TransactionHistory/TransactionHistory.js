@@ -1,47 +1,46 @@
 import PropTypes from 'prop-types';
-import { Cell, HeaderCell, Line, Table } from './TransactionHistory.styled';
+import { TableData, TableHeader, Table, TableRow } from './TransactionHistory.styled';
 
 export const TransactionHistory = ({ items }) => {
     return (<Table>
         <thead>
             <tr>
-                <HeaderCell>Type</HeaderCell>
-                <HeaderCell>Amount</HeaderCell>
-                <HeaderCell>Currency</HeaderCell>
+                <TableHeader>Type</TableHeader>
+                <TableHeader>Amount</TableHeader>
+                <TableHeader>Currency</TableHeader>
             </tr>
         </thead>
 
         <tbody>
-            {items.map(item => {
-              return (<TableRow
-                 key = {item.id}
-                 type={item.type}
-                 currency={item.currency}
-                 amount={item.amount}
-                />); 
-            })
+            {items.map(item => (
+                <TableRowItem  key={item.id}
+                   type={item.type}
+                   amount={item.amount}
+                    currency={item.currency}
+                />
+            ))
             }
         </tbody>
     </Table>
     );
-}
+};
 
-const TableRow = ({type, amount,currency}) =>{
-    return (<Line >
-        <Cell>{type}</Cell>
-        <Cell>{amount}</Cell>
-        <Cell>{currency.toUpperCase()}</Cell>
-        </Line> );
-}
+const TableRowItem = ({type,amount,currency})=>{
+    return(<TableRow>
+        <TableData>{type}</TableData>
+        <TableData>{amount}</TableData>
+        <TableData>{currency.toUpperCase()}</TableData>
+    </TableRow>);
+};
 
 TransactionHistory.propTypes = {
     items: PropTypes.array.isRequired,
 };
 
-TableRow.propTypes = {
-    type:PropTypes.string.isRequired,
-    amount:PropTypes.string.isRequired,
-    currency:PropTypes.string.isRequired,
-}
+TableRowItem.propTypes = {
+type:PropTypes.string.isRequired,
+amount:PropTypes.string.isRequired,
+currency:PropTypes.string.isRequired,
+};
 
 
