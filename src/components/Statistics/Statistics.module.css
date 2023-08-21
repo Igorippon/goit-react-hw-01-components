@@ -23,14 +23,7 @@
     padding: 0;
 }
 
-.item {
-    display: flex;
-    flex-direction: column;
-    width: 90px;
-    height: 110px;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .item:first-child {
     border-radius: 0px 0px 0px 6px;
@@ -40,14 +33,3 @@
     border-radius: 0px 0px 6px 0px;
 }
 
-.label {
-    font-weight: 300;
-    font-size: 22px;
-    line-height: 1.5;
-}
-
-.percentage {
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 1.11;
-}
